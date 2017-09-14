@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS3-长方体</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				perspective:1000px;
+			}
+			ul,li{
+				list-style: none;
+			}
+			
+			.hezi{
+				width:400px;
+				height:300px;
+				margin:100px auto;
+				
+				position: relative;
+				
+				transform-style:preserve-3d;
+				transition:all 4s;
+			}
+			.hezi:hover{
+				transform: rotateX(90deg);
+			}
+			
+			.hezi li{
+				position:absolute;
+				width:100%;
+				height:100%;
+				font-size:50px;
+				line-height:300px;
+				color:red;
+				text-align:center;
+			}
+			
+			.hezi li:nth-child(1){
+				transform: translateZ(150px);
+			}
+			.hezi li:nth-child(2){
+				transform:rotateX(-90deg) translateZ(150px);
+			}
+			.hezi li:nth-child(3){
+				transform: rotateX(180deg) translateZ(150px);
+			}
+			.hezi li:nth-child(4){
+				transform:rotateX(90deg) translateZ(150px);
+			}
+			
+			
+			
+			
+			
+			.bg1{
+				background:url(img/a1.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			.bg2{
+				background:url(img/a2.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			.bg3{
+				background:url(img/a3.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			.bg4{
+				background:url(img/a4.jpg) no-repeat top center;
+				background-size:cover;
+			}
+	
+
+			
+
+			/* 按钮样式  */
+			#btn1{
+				position: absolute;
+				top:400px;
+				left: 800px;
+				width: 100px;
+				height: 50px;
+			}
+			#btn2{
+				position: absolute;
+				top:400px;
+				left: 950px;
+				width: 100px;
+				height: 50px;
+			}
+			
+		</style>
+			
+		
+	
+	</head>
+	<body>
+		
+		<ul id="hezi" class="hezi" >
+			<li class="bg1">1</li>
+			<li class="bg2">2</li>
+			<li class="bg3">3</li>
+			<li class="bg4">4</li>
+		</ul>
+		
+		<button id="btn1">上</button>
+		<button id="btn2">下</button>
+		
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS3-长方体</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				perspective:1200px;
+			}
+			ul,li{
+				list-style: none;
+			}
+			
+			ul{			
+				width:600px;
+				height:400px;
+				margin: 100px auto;
+				position:relative;				
+				
+				transform-style:preserve-3d;
+				transition:all 2s;
+
+				transform: rotateX(0deg) ;
+			}
+			ul li{
+				position: absolute;
+				width:100%;
+				height:100%;
+				font-size:50px;
+				color:red;
+				text-align:center;
+				line-height:400px;
+			}
+			
+			.bg1{
+				background:url(img/a1.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			.bg2{
+				background:url(img/a2.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			.bg3{
+				background:url(img/a3.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			.bg4{
+				background:url(img/a4.jpg) no-repeat top center;
+				background-size:cover;
+			}
+			
+			ul li:nth-child(1){
+				transform: rotateX(0deg) translateZ(200px);
+			}
+			ul li:nth-child(2){
+				transform: rotateX(270deg) translateZ(200px);
+			}
+			ul li:nth-child(3){
+				transform: rotateX(180deg) translateZ(200px);
+			}
+			ul li:nth-child(4){
+				transform: rotateX(90deg) translateZ(200px);
+			}
+			
+
+			/*ul:hover{
+				transform: rotateX(360deg) ;
+			}*/
+			
+			#btn1{
+				position: absolute;
+				top:400px;
+				left: 800px;
+				width: 100px;
+				height: 50px;
+			}
+			#btn2{
+				position: absolute;
+				top:400px;
+				left: 950px;
+				width: 100px;
+				height: 50px;
+			}
+				
+			
+		</style>
+			
+		<script type="text/javascript" src="jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			var a=0;
+			$(function() {
+				
+				$("#btn1").click(function() {
+					a=a+90;
+					$("#hezi").css("transform","rotateX("+a+"deg)");
+				});
+				$("#btn2").click(function() {
+					a=a-90;
+					$("#hezi").css("transform","rotateX("+a+"deg)");
+				});	
+				
+			});
+		</script>
+	
+	</head>
+	<body>
+		
+		<ul id="hezi" >
+			<li class="bg1">1</li>
+			<li class="bg2">2</li>
+			<li class="bg3">3</li>
+			<li class="bg4">4</li>
+		</ul>
+		
+		<button id="btn1">上</button>
+		<button id="btn2">下</button>
+		
+	</body>
+</html>

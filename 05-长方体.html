@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS3-长方体</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				perspective:300px;
+			}
+			a{
+				display: block;				
+				width:200px;
+				height:80px;
+				margin: 100px auto;
+				
+				color:#fff;
+				font-size:24px;
+				line-height:80px;
+				text-align:center;
+				position:relative;
+				
+				transform-style:preserve-3d;
+				transition:all 6s;
+				/*transform: rotateX(0deg) rotateY(0deg) translateX(-100px);*/
+				transform: rotateX(0deg) translateX(-100px);
+			}
+			a span{
+				position: absolute;
+				width:100%;
+				height:100%;
+				background:deepskyblue;
+			}
+			a span:nth-child(1){
+				
+				transform: translateZ(40px);
+			}
+			a span:nth-child(2){
+				background:#168bbb;
+				transform: rotateX(-90deg) translateZ(40px);
+			}
+			a span:nth-child(3){
+				transform: translateZ(-40px);
+			}
+			a span:nth-child(4){
+				background:#168bbb;
+				transform: rotateX(90deg) translateZ(40px);
+			}
+			
+			
+			a span:nth-child(5){
+				background:pink;
+				width:80px;
+				transform: rotateY(-90deg) translateZ(40px);
+			}
+			a span:nth-child(6){
+				background:lightcoral;
+				width:80px;
+				transform: rotateY(90deg) translateZ(160px);  /* 160=200-40  */ 
+			}
+		
+
+			a:hover{
+				/*transform: rotateX(360deg) rotateY(360deg) translateX(-100px);*/
+				transform: rotateX(360deg) translateX(-100px);
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<a>
+			<span>Home</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>	
+		</a>
+		
+	</body>
+</html>
